@@ -14,7 +14,7 @@ const Button = ({
     className
 }: Props) => {
     return (
-        <PrismicNextLink field={buttonLink} className={clsx("rounded-xl bg-orange-600 px-5 py-4 text-center text-xl font-bold uppercase text-white transition-colors tracking-wide duration-150 hover:bg-orange-700 md:text-2xl", className)}>
+        <PrismicNextLink field={buttonLink} className={clsx("rounded-xl bg-blue-600 px-5 py-4 text-center text-xs font-bold uppercase text-white transition-colors tracking-wide duration-150 hover:bg-blue-700 md:text-sm", className)}>
               {buttonText}
         </PrismicNextLink>
         );
