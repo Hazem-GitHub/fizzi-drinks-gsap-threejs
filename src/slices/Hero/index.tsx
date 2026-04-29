@@ -12,6 +12,7 @@ import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
 import { View } from "@react-three/drei";
 import Scene from "./Scene";
+import { Bubbles } from "./Bubbles";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -62,7 +63,7 @@ const Hero: FC<HeroProps> = ({ slice }) => {
     })
     scrollTL
       .fromTo('body', {
-        backgroundColor: '#fff085',
+        backgroundColor: '#fef9c2',
       }, {
         backgroundColor: '#d9f99d',
         overwrite: 'auto',
@@ -92,12 +93,13 @@ const Hero: FC<HeroProps> = ({ slice }) => {
       {/* View Scene */}
       <View className="hero-scene pointer-events-none sticky top-0 z-50 -mt-[100vh] hidden h-screen w-screen md:block">
         <Scene />
+        <Bubbles />
       </View>
 
       <div className="grid">
         <div className="grid h-screen place-items-center">
           <div className="grid auto-rows-min place-items-center text-center">
-            <h1 className="hero-header lg:text-[13rem] md:text-[9rem] text-7xl font-black uppercase leading-[.8] text-orange-500">
+            <h1 className="hero-header lg:text-[13rem] md:text-[9rem] text-7xl font-black uppercase leading-[.8] text-blue-950">
               <TextSplitter text={asText(slice.primary.heading)} wordDisplayStyle="block" className="hero-header-word" />
             </h1>
             <div className="hero-subheading mt-12 text-5xl lg:text-6xl font-semibold text-blue-950">

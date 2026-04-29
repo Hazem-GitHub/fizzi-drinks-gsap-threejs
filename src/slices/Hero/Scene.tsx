@@ -120,7 +120,7 @@ const Scene = (props: SceneProps) => {
             <FloatingCan ref={can3Ref} flavor="grape" floatSpeed={FLOAT_SPEED} />
             <FloatingCan ref={can4Ref} flavor="strawberryLemonade" floatSpeed={FLOAT_SPEED} />
             <FloatingCan ref={can5Ref} flavor="watermelon" floatSpeed={FLOAT_SPEED} />
-            <Environment files="/hdr/lobby.hdr" environmentIntensity={1.2} resolution={64} />
+            <Environment files="/hdr/ferndale_studio_03_1k.hdr" environmentIntensity={1.2} resolution={64} />
         </group>
     );
 };
