@@ -13,6 +13,8 @@ import { ScrollTrigger } from "gsap/all";
 import { View } from "@react-three/drei";
 import Scene from "./Scene";
 import { Bubbles } from "./Bubbles";
+import { useStore } from "@/hooks/useStore";
+import { useMediaQuery } from "@/hooks/useMediaQuery";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -27,7 +29,12 @@ export type HeroProps = SliceComponentProps<Content.HeroSlice>;
  */
 const Hero: FC<HeroProps> = ({ slice }) => {
 
+  const ready = useStore((state) => state.ready);
+  const isDesktop = useMediaQuery("(min-width: 768px)", true); // Server fallback
+
   useGSAP(() => {
+    if (!ready && isDesktop) return;
+    
     const introTL = gsap.timeline()
 
     introTL
@@ -83,7 +90,8 @@ const Hero: FC<HeroProps> = ({ slice }) => {
         y: 20,
         opacity: 0,
     })
-  });
+  }, { dependencies: [ready, isDesktop] });
+
   return (
     <Bounded
       data-slice-type={slice.slice_type}
@@ -91,10 +99,14 @@ const Hero: FC<HeroProps> = ({ slice }) => {
       className="hero opacity-0"
     >
       {/* View Scene */}
-      <View className="hero-scene pointer-events-none sticky top-0 z-50 -mt-[100vh] hidden h-screen w-screen md:block">
-        <Scene />
-        <Bubbles />
-      </View>
+      {
+        isDesktop && (
+          <View className="hero-scene pointer-events-none sticky top-0 z-50 -mt-[100vh] hidden h-screen w-screen md:block">
+            <Scene />
+            <Bubbles />
+          </View>
+        )
+      }
 
       <div className="grid">
         <div className="grid h-screen place-items-center">
