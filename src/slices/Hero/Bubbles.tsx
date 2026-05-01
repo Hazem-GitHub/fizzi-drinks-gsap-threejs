@@ -11,10 +11,10 @@ const o = new THREE.Object3D();
 
 // Customizations in case you want to use this in other scenes.
 export function Bubbles({
-  count = 100,
+  count = 400,
   speed = 1,
-  bubbleSize = 0.05,
-  opacity = 0.3,
+  bubbleSize = 0.02,
+  opacity = 0.4,
   repeat = true,
 }) {
   const meshRef = useRef<THREE.InstancedMesh>(null);
