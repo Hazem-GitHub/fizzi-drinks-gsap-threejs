@@ -1,117 +1,143 @@
-# Prismic + Next.js Minimal Starter
+# 🥤 Fizzi — Animated Beverage Experience
 
-Want to quickly get started building your own project with [Prismic][prismic] and [Next.js][nextjs]? This project includes basic configurations and nothing else. The project includes one Rich Text slice, a homepage, and a dynamic page.
+A visually immersive landing page built using **Next.js**, **Prismic CMS**, **GSAP**, and **Three.js (React Three Fiber)** — based on the Prismic Minimal Starter.
 
-- **Demo**: [Open live demo][live-demo]
-- **Learn more about Prismic and Next.js**: [Prismic Next.js Documentation][prismic-docs]
+This project transforms a minimal starter into a **highly interactive, animation-driven product experience**, featuring dynamic 3D drink models and smooth storytelling across the page.
 
-&nbsp;
+---
 
-![Website screenshot](https://user-images.githubusercontent.com/31219208/228821412-fdde92b2-c13c-4287-b799-611fa96a5fd6.png)
+## 🚀 Live Demo
 
-&nbsp;
+👉 Soon
 
-## 🚀 Quick Start
+---
 
-To start a new project using this starter:
+## 🧩 Starter Base
 
-1. Visit <https://prismic.io/dashboard>.
-2. Create a new Prismic repository by selecting **Next.js**.
-3. Select the **Minimal starter**.
-4. Fill out your repository details and continue with the steps given in Prismic.
+This project was originally scaffolded using the official:
 
-When you're ready to start your project, run the following command:
+👉 https://nextjs-starter-prismic-minimal.vercel.app/
 
-```sh
+The starter provides:
+
+- Basic Next.js setup
+- Prismic CMS integration
+- Slice-based content structure
+
+It has been **heavily extended and customized** to support advanced animations, 3D rendering, and a richer UI/UX.
+
+---
+
+## ✨ Overview
+
+Fizzi is designed as a **motion-first landing page** that combines:
+
+- Scroll-driven storytelling
+- Real-time 3D rendering
+- CMS-powered dynamic content
+
+---
+
+## 🧠 Key Features
+
+### 🎬 Advanced Animations (GSAP)
+
+- ScrollTrigger-based animations
+- Timeline orchestration
+- Smooth motion design
+
+### 🧊 3D Drink Models (Three.js + R3F)
+
+- 5 dynamic drink flavors
+- Scroll-synced transitions
+
+### ⚡ Next.js Performance
+
+- Optimized rendering
+- Lazy loading
+
+### 📝 Prismic CMS
+
+- Slice-based structure
+- Dynamic updates
+
+---
+
+## 🛠️ Tech Stack
+
+- Next.js
+- Prismic CMS
+- GSAP
+- Three.js (R3F)
+- Tailwind CSS / CSS Modules
+
+---
+
+## 📸 Preview
+
+![Fizzi Preview](./public/OG Image.png)
+
+---
+
+## 🧩 Project Structure
+
+```
+/components      → Reusable UI & animation components
+/sections        → Page sections (Hero, Flavors, etc.)
+/prismic         → CMS configuration & slices
+/lib             → Utilities & helpers
+/public          → Static assets (images, 3D models)
+/styles          → Global styles
+```
+
+---
+
+## ⚙️ Getting Started
+
+```bash
+git clone https://github.com/your-username/fizzi.git
+cd fizzi
+npm install
 npm run dev
 ```
 
-## How to use your project
+---
 
-To edit the content of this project, go to [prismic.io/dashboard](https://prismic.io/dashboard), click on the repository for this website, and start editing.
+## 📈 What This Project Demonstrates
 
-### Create a page
+Advanced frontend architecture with Next.js
+Real-world use of GSAP + ScrollTrigger
+Integration of 3D experiences in UI
+Clean separation between content and presentation
+Building high-end interactive landing pages
 
-To create a page, click on the green pencil icon, then select **Page**.
+---
 
-Pages are made of Slices. You can add and rearrange Slices to your pages.
+## pages
 
-Your new page will be accessible by its URL, but it won't appear on the website automatically. To let users discover it, add it to the navigation.
+🔮 Future Improvements
+Mobile optimization for 3D rendering
+Interactive controls (hover / drag)
+Accessibility improvements (reduced motion support)
+Expanded CMS flexibility
 
-### Preview documents
+---
 
-If you chose this starter when you created a new repository from the Prismic Dashboard, then your repository is preconfigured with previews on localhost. To change the preview configuration or add previews to your production or staging environments, see [Preview Drafts in Next.js](https://prismic.io/docs/technologies/preview-content-nextjs) in the Prismic documentation.
+## 👨‍💻 Author
 
-### Customize this website
+Hazem Tantawy
+Senior Frontend Engineer — React / Next.js / Animation-driven UX
 
-This website is preconfigured with Prismic. It has three Prismic packages installed:
+---
 
-- `@prismicio/client` provides helpers for fetching content from Prismic
-- `@prismicio/react` provides React components for rendering content from Prismic
-- `@prismicio/next` provides a wrapper component to configure Prismic previews
+## 📄 License
 
-These packages are already integrated and employed in this app. Take a look at the code to see how they're used.
+This project is for portfolio and demonstration purposes.
 
-### Edit the code
+---
 
-There are two steps to rendering content from Prismic in your Next.js project:
+## 🙌 Acknowledgements
 
-1. Fetch content from the Prismic API using `@prismicio/client`.
-2. Template the content using components from `@prismicio/react`.
-
-Here are some of the files in your project that you can edit:
-
-- `prismicio.ts` - This file includes configuration for `@prismicio/client` and exports useful API helpers.
-- `app/layout.tsx` - This is your layout component, which includes configuration for `@prismicio/react` and `@prismicio/next`.
-- `app/page.tsx` - This is the app homepage. It queries and renders a page document with the UID (unique identifier) "home" from the Prismic API.
-- `app/[uid]/page.tsx` - This is the page component, which queries and renders a page document from your Prismic repository based on the UID.
-- `slices/*/index.tsx` - Each Slice in your project has an index.tsx file that renders the Slice component. Edit this file to customize your Slices.
-
-These are important files that you should leave as-is:
-
-- `app/api/exit-preview/route.ts` - Do not edit or delete this file. This is the API endpoint to close a Prismic preview session.
-- `app/api/preview/route.ts` - Do not edit or delete this file. This is the API endpoint to launch a Prismic preview session.
-- `app/slice-simulator/page.tsx` - Do not edit or delete this file. This file simulates your Slice components in development.
-- `slices/` - This directory contains Slice components, which are generated programmatically by Slice Machine. To customize a Slice template, you can edit the Slice's index.tsx file. To add Slices, delete Slices, or edit Slice models, use Slice Machine (more info below).
-
-Learn more about how to edit your components with [Fetch Data in Next.js](https://prismic.io/docs/technologies/fetch-data-nextjs) and [Template Content in Next.js](https://prismic.io/docs/technologies/template-content-nextjs).
-
-Learn more about how to use [TypeScript with Prismic](https://prismic.io/docs/typescript-nextjs).
-
-### Deploy to the web
-
-To put your project online, see [Deploy your Next.js App](https://prismic.io/docs/technologies/deploy-nextjs).
-
-### Edit content models with Slice Machine
-
-This project includes an application called Slice Machine, which generates models for your Custom Types and Slices. Slice Machine stores the models locally in your codebase, so you can save and version them. It also syncs your models to Prismic. To learn how to use Slice Machine, read [Model Content in Next.js](https://prismic.io/docs/technologies/model-content-nextjs).
-
-If you change or add to your Custom Types, you'll need to update your route handling to match. To learn how to do that, read [Define Paths in Next.js](https://prismic.io/docs/technologies/define-paths-nextjs).
-
-## Documentation
-
-For the official Prismic documentation, see [Prismic's guide for Next.js][prismic-docs] or the [technical references for the installed Prismic packages](https://prismic.io/docs/technologies/technical-references).
-
-## License
-
-```
-Copyright 2013-2022 Prismic <contact@prismic.io> (https://prismic.io)
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-```
-
-[prismic]: https://prismic.io/
-[prismic-docs]: https://prismic.io/docs/technologies/nextjs
-[prismic-sign-up]: https://prismic.io/dashboard/signup
-[nextjs]: https://nextjs.org/
-[live-demo]: https://nextjs-starter-prismic-minimal.vercel.app/
+Prismic for the starter and CMS platform
+GSAP for powerful animation tooling
+Three.js & React Three Fiber for 3D rendering
