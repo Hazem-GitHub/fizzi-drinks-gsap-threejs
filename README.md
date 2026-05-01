@@ -6,6 +6,12 @@ This project transforms a minimal starter into a **highly interactive, animation
 
 ---
 
+## 📸 Preview
+
+![Fizzi Preview](./public/screenshot.png)
+
+---
+
 ## 🚀 Live Demo
 
 👉 Soon
@@ -70,12 +76,6 @@ Fizzi is designed as a **motion-first landing page** that combines:
 - GSAP
 - Three.js (R3F)
 - Tailwind CSS / CSS Modules
-
----
-
-## 📸 Preview
-
-![Fizzi Preview](./public/screenshot.png)
 
 ---
 
