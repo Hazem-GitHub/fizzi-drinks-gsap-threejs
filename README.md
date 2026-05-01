@@ -75,7 +75,7 @@ Fizzi is designed as a **motion-first landing page** that combines:
 
 ## 📸 Preview
 
-![Fizzi Preview](./public/OG Image.png)
+![Project Screenshot](./public/OG Image.png)
 
 ---
 
