@@ -1,6 +1,6 @@
 "use client";
 
-import { Environment, Scroll } from "@react-three/drei";
+import { Environment } from "@react-three/drei";
 import { useRef } from "react";
 import { Group } from "three";
 import gsap from "gsap";
@@ -17,8 +17,7 @@ type Props = {};
 export default function Scene({}: Props) {
   const canRef = useRef<Group>(null);
   const isDesktop = useMediaQuery("(min-width: 768px)", true);
-
-  const bgColors = ["#FFA6B5", "#E9CFF6", "#CBEF9A"];
+  const bgColors = ["#d9f99d", "#f6e7fc", "#ffd7d9"];
 
   useGSAP(
     () => {
@@ -45,6 +44,7 @@ export default function Scene({}: Props) {
 
         const xPosition = isDesktop ? (isOdd ? "-1" : "1") : 0;
         const yRotation = isDesktop ? (isOdd ? ".4" : "-.4") : 0;
+
         scrollTl
           .to(canRef.current.position, {
             x: xPosition,
@@ -52,13 +52,10 @@ export default function Scene({}: Props) {
             delay: 0.5,
           })
           .to(
-            canRef.current.rotation,
-            {
+            canRef.current.rotation,{
               y: yRotation,
               ease: "back.inOut",
-            },
-            "<",
-          )
+          }, "<")
           .to(".alternating-text-container", {
             backgroundColor: gsap.utils.wrap(bgColors, index),
           });
@@ -68,13 +65,16 @@ export default function Scene({}: Props) {
   );
 
   return (
-    <group
-      ref={canRef}
-      position-x={isDesktop ? 1 : 0}
-      rotation-y={isDesktop ? -0.3 : 0}
-    >
-      <FloatingCan flavor="strawberryLemonade" />
-      <Environment files={"/hdr/lobby.hdr"} environmentIntensity={1.5} />
-    </group>
+    <>
+      
+      <group
+        ref={canRef}
+        position-x={isDesktop ? 1 : 0}
+        rotation-y={isDesktop ? -0.4 : 0}
+      >
+        <FloatingCan flavor={'grape'} />
+        <Environment files={"/hdr/lobby.hdr"} environmentIntensity={1.2} />
+      </group>
+    </>
   );
 }

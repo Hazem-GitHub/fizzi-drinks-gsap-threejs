@@ -25,10 +25,10 @@ const AlternatingText = ({ slice }: AlternatingTextProps): JSX.Element => {
     <Bounded
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="alternating-text-container relative bg-yellow-300 text-sky-950"
+      className="alternating-text-container relative bg-yellow-100 text-sky-950"
     >
       <div>
-        <div className="relative z-[100] grid">
+        <div className="relative z-[100] grid  bg-inherit">
           <View className="alternating-text-view absolute left-0 top-0 h-screen w-full">
             <Scene />
           </View>
@@ -36,13 +36,13 @@ const AlternatingText = ({ slice }: AlternatingTextProps): JSX.Element => {
           {slice.primary.text_group.map((item, index) => (
             <div
               key={asText(item.heading)}
-              className="alternating-section grid h-screen place-items-center gap-x-12 md:grid-cols-2"
+              className="alternating-section bg-inherit grid h-screen place-items-center gap-x-12 md:grid-cols-2"
             >
               <div
                 className={clsx(
                   index % 2 === 0 ? "col-start-1" : "md:col-start-2",
 
-                  "rounded-lg p-4 backdrop-blur-lg max-md:bg-white/30",
+                  "rounded-lg p-4 backdrop-blur-lg max-md:bg-inherit/70",
                 )}
               >
                 <h2 className="text-balance text-6xl font-bold">
