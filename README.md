@@ -14,7 +14,7 @@ This project transforms a minimal starter into a **highly interactive, animation
 
 ## 🚀 Live Demo
 
-👉 Soon
+👉 https://fizzi-drinks-gsap-threejs.vercel.app/
 
 ---
 
