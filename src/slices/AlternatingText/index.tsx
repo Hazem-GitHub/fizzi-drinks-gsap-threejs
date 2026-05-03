@@ -10,6 +10,7 @@ import {
 import { View } from "@react-three/drei";
 import Scene from "./Scene";
 import clsx from "clsx";
+import { JSX } from "react";
 
 /**
  * Props for `AlternatingText`.
